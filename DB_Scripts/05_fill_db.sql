@@ -1,12 +1,12 @@
 BEGIN;
 
 -- 1. Roles
-INSERT INTO roles (code) VALUES
-    ('admin'),
-    ('manager'),
-    ('tester'),
-    ('developer')
-ON CONFLICT (code) DO NOTHING;
+/* INSERT INTO roles (code) VALUES
+    ('admin'), -- 1
+    ('manager'), -- 2
+    ('tester'), -- 3
+    ('developer') -- 4
+ON CONFLICT (code) DO NOTHING; */
 
 -- 2. Users (8 test users with roles: admins, managers, testers, developers)
 -- Test user credentials (bcrypt hashes generated for local/dev testing):
@@ -37,27 +37,28 @@ SELECT
     v.username,
     v.password_hash,
     v.is_active,
-    r.role_id
+    -- r.role_id
+    v.role_id
 FROM (
     VALUES
         -- Password: AdminPass123!
-        ('Hannah Miller', 'hannah.miller@example.com', '+447700900001', DATE '1990-04-12', 'hannah_admin', '$2b$12$eImiTXuWVxfM37uY4JANjQ.1G3a0Q2W6Y2f9y7Z8u9v0w1x2y3z4a', TRUE, 'admin'),
+        ('Hannah Miller', 'hannah.miller@example.com', '+447700900001', DATE '1990-04-12', 'hannah_admin', '$2b$12$eImiTXuWVxfM37uY4JANjQ.1G3a0Q2W6Y2f9y7Z8u9v0w1x2y3z4a', TRUE, 1 /* 'admin' */),
         -- Password: AdminPass123!
-        ('David Carter', 'david.carter@example.com', '+447700900002', DATE '1988-09-23', 'david_admin', '$2b$12$eImiTXuWVxfM37uY4JANjQ.1G3a0Q2W6Y2f9y7Z8u9v0w1x2y3z4a', TRUE, 'admin'),
+        ('David Carter', 'david.carter@example.com', '+447700900002', DATE '1988-09-23', 'david_admin', '$2b$12$eImiTXuWVxfM37uY4JANjQ.1G3a0Q2W6Y2f9y7Z8u9v0w1x2y3z4a', TRUE, 1 /* 'admin' */),
         -- Password: ManagerPass123!
-        ('Claire Bennett', 'claire.bennett@example.com', '+447700900003', DATE '1992-01-17', 'claire_mgr', '$2b$12$KIX9m2n3o4p5q6r7s8t9uO1v2w3x4y5z6A7B8C9D0E1F2G3H4I5J6', TRUE, 'manager'),
+        ('Claire Bennett', 'claire.bennett@example.com', '+447700900003', DATE '1992-01-17', 'claire_mgr', '$2b$12$KIX9m2n3o4p5q6r7s8t9uO1v2w3x4y5z6A7B8C9D0E1F2G3H4I5J6', TRUE, 2 /* 'manager' */),
         -- Password: ManagerPass123!
-        ('Thomas Brooks', 'thomas.brooks@example.com', '+447700900004', DATE '1991-06-05', 'thomas_mgr', '$2b$12$KIX9m2n3o4p5q6r7s8t9uO1v2w3x4y5z6A7B8C9D0E1F2G3H4I5J6', TRUE, 'manager'),
+        ('Thomas Brooks', 'thomas.brooks@example.com', '+447700900004', DATE '1991-06-05', 'thomas_mgr', '$2b$12$KIX9m2n3o4p5q6r7s8t9uO1v2w3x4y5z6A7B8C9D0E1F2G3H4I5J6', TRUE, 2 /* 'manager' */),
         -- Password: TesterPass123!
-        ('Rachel Foster', 'rachel.foster@example.com', '+447700900005', DATE '1995-11-30', 'rachel_qa', '$2b$12$L8M9N0O1P2Q3R4S5T6U7Ve8W9X0Y1Z2a3b4c5d6e7f8g9h0i1j2k3', TRUE, 'tester'),
+        ('Rachel Foster', 'rachel.foster@example.com', '+447700900005', DATE '1995-11-30', 'rachel_qa', '$2b$12$L8M9N0O1P2Q3R4S5T6U7Ve8W9X0Y1Z2a3b4c5d6e7f8g9h0i1j2k3', TRUE, 3 /* 'tester' */),
         -- Password: TesterPass123!
-        ('Liam Turner', 'liam.turner@example.com', '+447700900006', DATE '1996-03-19', 'liam_qa', '$2b$12$L8M9N0O1P2Q3R4S5T6U7Ve8W9X0Y1Z2a3b4c5d6e7f8g9h0i1j2k3', TRUE, 'tester'),
+        ('Liam Turner', 'liam.turner@example.com', '+447700900006', DATE '1996-03-19', 'liam_qa', '$2b$12$L8M9N0O1P2Q3R4S5T6U7Ve8W9X0Y1Z2a3b4c5d6e7f8g9h0i1j2k3', TRUE, 3 /* 'tester' */),
         -- Password: DevPass123!
-        ('Oliver Hayes', 'oliver.hayes@example.com', '+447700900007', DATE '1994-07-08', 'oliver_dev', '$2b$12$M1N2O3P4Q5R6S7T8U9V0We1X2Y3Z4a5b6c7d8e9f0g1h2i3j4k5l6', TRUE, 'developer'),
+        ('Oliver Hayes', 'oliver.hayes@example.com', '+447700900007', DATE '1994-07-08', 'oliver_dev', '$2b$12$M1N2O3P4Q5R6S7T8U9V0We1X2Y3Z4a5b6c7d8e9f0g1h2i3j4k5l6', TRUE, 4 /* 'developer' */),
         -- Password: DevPass123!
-        ('Sophie Dawson', 'sophie.dawson@example.com', '+447700900008', DATE '1997-02-27', 'sophie_dev', '$2b$12$M1N2O3P4Q5R6S7T8U9V0We1X2Y3Z4a5b6c7d8e9f0g1h2i3j4k5l6', TRUE, 'developer')
-) AS v(name, email, phone_number, birth_date, username, password_hash, is_active, role_code)
-JOIN roles r ON r.code = v.role_code
+        ('Sophie Dawson', 'sophie.dawson@example.com', '+447700900008', DATE '1997-02-27', 'sophie_dev', '$2b$12$M1N2O3P4Q5R6S7T8U9V0We1X2Y3Z4a5b6c7d8e9f0g1h2i3j4k5l6', TRUE, 4 /* 'developer' */)
+) AS v(name, email, phone_number, birth_date, username, password_hash, is_active, role_id /* role_code */)
+/* JOIN roles r ON r.code = v.role_code */
 ON CONFLICT (username) DO NOTHING;
 
 -- 3. Organizations

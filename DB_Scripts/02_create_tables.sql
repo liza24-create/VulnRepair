@@ -2,10 +2,10 @@
 ALTER SCHEMA public OWNER TO vr_admin;
 
 -- 1. Create roles
-CREATE TABLE roles (
+/* CREATE TABLE roles (
     role_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     code VARCHAR(50) NOT NULL UNIQUE -- admin, manager, tester, developer 
-);
+);*/
 
 -- 2. Users
 CREATE TABLE users (
@@ -17,12 +17,12 @@ CREATE TABLE users (
     username VARCHAR(100) NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    role_id BIGINT NOT NULL,
+    role_id INT NOT NULL, -- admin, manager, tester, developer
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),    
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW() /*,    
     CONSTRAINT fk_users_role
         FOREIGN KEY (role_id) REFERENCES roles (role_id)
-        ON DELETE RESTRICT
+        ON DELETE RESTRICT*/
 );
 
 -- 3. Organizations
