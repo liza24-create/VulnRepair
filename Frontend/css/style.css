@@ -1,0 +1,286 @@
+body {
+  font-family: times-serif;
+  color: black;
+  margin: 0;
+}
+
+.section-pink {
+  background-color: #f2ebed; /* color light pink*/
+  padding: 30px;
+}
+
+.section-white {
+  background-color: #ffffff; /* color white*/
+  padding: 30px;
+}
+
+header, 
+footer, 
+nav ul {
+  flex-wrap: wrap; /*allowing the items to wrap to the next line if use 360px*/
+  font-size: 16px;
+}
+
+header{
+  background-color: #4a303d; /* color dark burgundy*/
+  color: white;
+  padding: 30px;
+  display: flex; /*the logo on the left and the menu (navigation) on the right*/
+  justify-content: space-between; /*items will be along the edges*/
+  align-items: center; /*align vertically on the center*/
+}
+
+/*logo, website name*/
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 30px;
+}
+
+/*unordered list ul settings in the header*/
+header nav ul {
+  list-style: none; /*removing the mark dots from list*/
+  margin: 0;
+  padding: 0;
+  display: flex; /*align elements ul in single horizontal line*/
+  align-items: center; /*align vertically on the center*/
+  gap: 20px; /*spacing between menu (navigation) items*/
+}
+
+/*style for the items inside the unordered list ul*/
+header nav a:visited { /*preventing links from turning into purple/blue color when visit, clicked*/
+  color: white; /*always white color, even if we already visited the link*/
+}
+
+footer {
+  background-color: #4a303d; /* color dark burgundy*/
+  color: white;
+  padding: 30px;
+  display: flex; /*the logo on the left and the menu (navigation) on the right*/
+  justify-content: space-between; /*items will be along the edges*/
+  align-items: center; /*align vertically on the center*/
+  text-align: center; /*align text in the center*/
+}
+
+footer p {
+  margin: 0px 10px;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  padding: 0 12px;
+}
+
+h2 {
+   padding: 0 40px;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+/*for mailto link*/
+.my-email {
+  color: white; /* color white*/
+  text-decoration: underline;
+}
+
+/*style for the items inside footer*/
+footer a:visited { /*preventing links from turning into purple/blue color when visit, clicked*/
+  color: white; /*always white color, even if we already visited the link*/
+  align-items: center;
+}
+
+/*ordered list ol settings*/
+.reading-steps {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.site-map-title, .site-map-intro {
+  text-align: center;
+}
+
+.site-map {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  padding: 0 30px;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+.space-after {
+  margin-bottom: 1.5em; /* gap size */
+}
+
+figure figcaption a:visited { /*preventing links from turning into purple color when visit, clicked*/
+  color: black; /*always black color, even if we already visited the link*/
+  font-size: 14px;
+}
+
+figcaption {
+  text-align: center;
+}
+
+/*for links in the caption under images*/
+.my-link {
+  color: black; /* color black*/
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/*styles for data table*/
+.data-table {
+  width: 80%;
+  max-width: 500px;
+  border-collapse: collapse; /*removing the space between borders of the table*/
+  background-color: #e7f2ff; /* color light blue*/
+  font-family: sans-serif;
+}
+
+/*caption for the table*/
+.data-table caption {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: center;
+  white-space: nowrap; /*caption in one line*/
+  color: black;
+}
+
+/*colums names and colums data*/
+.data-table th,
+.data-table td {
+  font-size: 16px;
+  padding: 12px 20px;
+  border: 1px solid #000000; /*color of the border*/
+  text-align: center;
+  text-align: middle;
+  color: black;
+}
+
+/*bold column names*/
+.data-table th {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.row1 {
+  display: grid;
+  grid-template-columns: 1fr minmax(150px, 600px);
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 40px; 
+}
+
+.col-image {
+  display: flex;  
+  width: 100%;
+}
+
+.col-text {
+  text-align: justify;
+  width: 100%;
+}
+
+.row3 {
+  display: grid;  
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  align-items: top;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.row3-item {
+  justify-content: center;  
+  text-align: justify;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;  
+}
+
+.row3-item p {
+  font-size: 16px;
+}
+
+
+@media (max-width: 1440px) {
+  /* resizable image column */
+  .row1{
+   grid-template-columns: 3fr 2fr;
+  }
+  .row2{
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media (max-width: 1280px) {
+/* section row redirection from row to column */
+  .row1, .row2 {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+  .row3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1078px) {
+  
+  /* move the menu under the logo */
+  .logo{
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 930px) {
+  /* footer redirection from row to column */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  } 
+}
+
+@media (max-width: 768px) {
+ .row3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 562px) {
+/* header navigation redirection from row to column */
+  header nav ul {
+    flex-direction: column;     
+  }
+  .section-white, .section-pink, header {
+    padding: 12px;
+  }
+  .row1, .row2, .row3 {
+    padding: 0;
+  }
+  h2 {
+   padding: 0px;
+  }
+}

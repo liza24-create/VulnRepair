@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+
+      <meta name="description" content="Login form">
+      <meta name="author" content="YG">
+
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="../css/feedback.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Zero Day Attack</div>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Main Page</a></li>
+          <li><a href="section1.html">Concept & Operation. Risk Analysis</a></li>
+          <li><a href="section2.html">Prevention & Mitigation. Current Evidence & Trends</a></li>
+          <li><a href="about.html">About Author & Blog</a></li>
+          <li>
+            <a href="login.html">
+              <img src="../images/login.png" alt="Login to your account" width="24" height="24">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <!-- make the text in the center -->
+    <main>
+      <h1>Login</h1>
+      
+      <form action="#" method="post">
+      
+        <!-- 1: Login Information -->
+        <fieldset>
+          <legend>Login Information</legend>
+            
+          <p>
+            <label for="user-name" class="required">User Name:</label>
+            <input type="text" id="user-name" name="userName" required placeholder="Enter your user name">
+          </p>
+            
+          <p>
+            <label for="user-password" class="required">Password:</label>
+            <input type="password" id="user-password" name="userPassword" required placeholder="Enter your password">
+          </p>
+        </fieldset>
+              
+        <!-- Note for required fields -->
+        <p><small><span style="color: red;">*</span> Indicates required field</small></p>
+        
+        <!-- Sign in button -->
+        <p>
+          <button type="submit">Sign In</button>
+        </p> 
+      
+      </form>
+    </main>
+
+
+    <footer>
+      <p>@2026 YG. All rights reserved.</p>
+      <p>Have questions about Zero Day Attack? Write to me at <br>
+        <a href="mailto:yelyzaveta.golushkova@knf.stud.vu.lt?subject=Question%20about%20Zero%20Day%20Attack" class="my-email">yelyzaveta.golushkova@knf.stud.vu.lt</a>
+      </p>
+      <p> Feedback & Contact Form: <a href="feedback.html" class="my-email">Click here</a></p>
+    </footer>
+  </body>
+</html>

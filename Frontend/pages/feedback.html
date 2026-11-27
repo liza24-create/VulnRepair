@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Feedback & Contact Form</title>
+
+      <meta name="description" content="Your Opinion on the Blog. What do you think about this blog?">
+      <meta name="author" content="YG">
+
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="../css/feedback.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Zero Day Attack</div>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Main Page</a></li>
+          <li><a href="section1.html">Concept & Operation. Risk Analysis</a></li>
+          <li><a href="section2.html">Prevention & Mitigation. Current Evidence & Trends</a></li>
+          <li><a href="about.html">About Author & Blog</a></li>
+          <li>
+            <a href="login.html">
+              <img src="../images/login.png" alt="Login to your account" width="24" height="24">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <!-- make the text in the center -->
+    <main>
+      <h1>Feedback & Contact Form</h1>
+      
+      <form action="#" method="post">
+      
+        <!-- 1: Personal Information -->
+        <fieldset>
+          <legend>Contact Information</legend>
+            
+          <p>
+            <label for="user-name" class="required">Your Name:</label>
+            <input type="text" id="user-name" name="userName" required placeholder="Enter your name">
+          </p>
+            
+          <p>
+            <label for="user-email" class="required">Your Email:</label>
+            <input type="email" id="user-email" name="userEmail" required placeholder="example@gmail.com">
+          </p>
+        </fieldset>
+
+        <!-- 2: How did you find this blog? -->
+        <fieldset>
+            <legend>How did you find this blog?</legend>  
+          
+            <!-- Radio buttons -->
+            <p>
+              <input type="radio" id="source-search" name="source" value="search">
+              <label for="source-search">Internet Search</label>
+            </p>
+            <p>
+              <input type="radio" id="source-social" name="source" value="social">
+              <label for="source-social">Social Media</label>
+            </p>
+            <p>
+              <input type="radio" id="source-other" name="source" value="other">
+              <label for="source-other">Other</label>
+            </p>
+        </fieldset>
+        
+        <!-- 3: Message -->
+        <fieldset>
+            <legend>Your Message</legend>
+            
+            <!-- Popup list -->
+            <p>
+              <label for="topic" class="required">Select Message Topic:</label>
+                <select id="topic" name="topic" required>
+                  <option value="">-- Choose your topic --</option>
+                  <option value="general">General Question</option>
+                  <option value="bug">Report an Issue</option>
+                  <option value="site">Site Suggestion</option>
+                </select>
+            </p>
+
+            <!-- Textarea -->
+            <p>
+                <label for="message" class="required">Write your message:</label><br>
+                <textarea id="message" name="message" rows="5" cols="40" required placeholder="Write your message here..."></textarea>
+            </p>
+        </fieldset>
+
+        <!-- 4: Your Opinion on the Blog -->
+        <fieldset>
+          <legend>Your Opinion on the Blog</legend>
+
+          <!-- Checkboxes -->
+            <p>What do you think about the blog?<br><small>(multiple choices allowed)</small></p>
+            <p>
+                <input type="checkbox" id="opinion-use" name="opinions" value="useful">
+                <label for="opinion-use">Useful Information</label>
+            </p>
+            <p>
+                <input type="checkbox" id="opinion-images" name="opinions" value="images">
+                <label for="opinion-images">Clear images with explanations</label>
+            </p>
+            <p>
+                <input type="checkbox" id="opinion-design" name="opinions" value="design">
+                <label for="opinion-design">Modern Design</label>
+            </p>            
+        </fieldset>
+
+        <!-- Note for required fields -->
+        <p><small><span style="color: red;">*</span> Indicates required field</small></p>
+        
+        <!-- Submit button -->
+        <p>
+          <button type="submit">Submit Feedback</button>
+        </p> 
+      
+      </form>
+    </main>
+
+
+    <footer>
+      <p>@2026 YG. All rights reserved.</p>
+      <p>Have questions about Zero Day Attack? Write to me at <br>
+        <a href="mailto:yelyzaveta.golushkova@knf.stud.vu.lt?subject=Question%20about%20Zero%20Day%20Attack" class="my-email">yelyzaveta.golushkova@knf.stud.vu.lt</a>
+      </p>
+      <p> Feedback & Contact Form: <a href="feedback.html" class="my-email">Click here</a></p>
+    </footer>
+  </body>
+</html>
