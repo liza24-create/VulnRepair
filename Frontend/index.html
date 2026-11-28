@@ -20,9 +20,14 @@
           <li><a href="pages/section1.html">Concept & Operation. Risk Analysis</a></li>
           <li><a href="pages/section2.html">Prevention & Mitigation. Current Evidence & Trends</a></li>
           <li><a href="pages/about.html">About Author & Blog</a></li>
+          <li id="DashboardItem" style="display: none;">
+            <a href="pages/dashboard.html" id="DashboardLink" title="User Dashboard">
+              <img src="images/user.png" alt="Dashboard" width="24" height="24">
+            </a>
+          </li>
           <li>
-            <a href="login.html">
-              <img src="../images/login.png" alt="Login to your account" width="24" height="24">
+            <a href="pages/login.html" id="authLink" title="Login to your account">
+              <img id="authImg" src="images/login.png" alt="Login to your account" width="24" height="24">
             </a>
           </li>
         </ul>
@@ -91,5 +96,7 @@
         </p>
         <p> Feedback & Contact Form: <a href="pages/feedback.html" class="my-email">Click here</a></p>
       </footer>
+
+      <script src="js/auth.js"></script>
   </body>
 </html>

@@ -23,7 +23,7 @@
           <li><a href="section2.html">Prevention & Mitigation. Current Evidence & Trends</a></li>
           <li><a href="about.html">About Author & Blog</a></li>
           <li>
-            <a href="login.html">
+            <a href="login.html" id="authLink" title="Login to your account">
               <img src="../images/login.png" alt="Login to your account" width="24" height="24">
             </a>
           </li>
@@ -34,20 +34,20 @@
     <main>
       <h1>Login</h1>
       
-      <form action="#" method="post">
+      <form id="loginForm">
       
         <!-- 1: Login Information -->
         <fieldset>
           <legend>Login Information</legend>
             
           <p>
-            <label for="user-name" class="required">User Name:</label>
-            <input type="text" id="user-name" name="userName" required placeholder="Enter your user name">
+            <label for="username" class="required">User Name:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your user name">
           </p>
             
           <p>
-            <label for="user-password" class="required">Password:</label>
-            <input type="password" id="user-password" name="userPassword" required placeholder="Enter your password">
+            <label for="password" class="required">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
           </p>
         </fieldset>
               
@@ -60,6 +60,8 @@
         </p> 
       
       </form>
+
+      <p id="status"></p>
     </main>
 
 
@@ -70,5 +72,7 @@
       </p>
       <p> Feedback & Contact Form: <a href="feedback.html" class="my-email">Click here</a></p>
     </footer>
+
+    <script src="../js/auth.js"></script>
   </body>
 </html>
